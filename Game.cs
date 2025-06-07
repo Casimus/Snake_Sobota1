@@ -1,3 +1,4 @@
+using System.Numerics;
 using Raylib_cs;
 
 public class Game
@@ -40,6 +41,23 @@ public class Game
     // aktualizacja fizyki 
     private void Update()
     {
+        if (Raylib.IsKeyPressed(KeyboardKey.D))
+        {
+            snake.ChangeDirection(new Vector2(1, 0));
+        }
+        if (Raylib.IsKeyPressed(KeyboardKey.A))
+        {
+            snake.ChangeDirection(new Vector2(-1, 0));
+        }
+        if (Raylib.IsKeyPressed(KeyboardKey.W))
+        {
+            snake.ChangeDirection(new Vector2(0, -1));
+        }
+        if (Raylib.IsKeyPressed(KeyboardKey.S))
+        {
+            snake.ChangeDirection(new Vector2(0, 1));
+        }
+
         snake.Move();
     }
     // aktualizacja grafiki

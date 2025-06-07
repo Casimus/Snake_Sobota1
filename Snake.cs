@@ -51,6 +51,10 @@ public class Snake
     }
     public void ChangeDirection(Vector2 newDirection)
     {
+        if (newDirection.X + direction.X != 0 || newDirection.Y + direction.Y != 0)
+        {
+            direction = newDirection;
+        }
     }
 
     public void Draw()
